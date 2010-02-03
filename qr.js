@@ -38,8 +38,17 @@ var qrcode = document.createElement("img");
 	qrcode.setAttribute('style','margin:10px;cursor:pointer;');
 	qrcode.setAttribute('src','http://chart.apis.google.com/chart?cht=qr&chs=300x300&chld=H|0&chl=' + document.location.href);
 	qrcode.setAttribute('title','Click to close.');
+	
+var qrurl = document.createElement("div");
+	qrurl.setAttribute('class','shaunsational_qr');
+	qrurl.setAttribute('id','qrurl');
+	qrurl.setAttribute('style','background:#FFF;margin:5px auto auto auto;padding:2px 15px;cursor:pointer;width:290px;font-size:10px;color:#333;-moz-border-radius:20px;text-align:left;');
+	var qrurl_text = document.createTextNode(document.location.href);
+		qrurl.appendChild(qrurl_text);
+
 
 centr.appendChild(qrdiv);
+centr.appendChild(qrurl);
 qrdiv.appendChild(qrcode);
 document.body.appendChild(shade);
 document.body.appendChild(centr);
