@@ -9,8 +9,10 @@ function cleanUp()
 
 	for(var x in a)
 	{
-		if (a[x])
-		a[x].parentNode.removeChild(a[x]);
+		if (a[x].parentNode)
+		{
+			a[x].parentNode.removeChild(a[x]);
+		}
 	}
 }
 cleanUp();
