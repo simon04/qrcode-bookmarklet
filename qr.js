@@ -1,3 +1,20 @@
+function getSelected()
+{
+	if (window.getSelection)
+	{
+		return window.getSelection();
+	}
+	else if (document.getSelection)
+	{
+		return document.getSelection();
+	}
+	else if (document.selection)
+	{
+		return document.selection.createRange().text;
+	}
+	return false;
+}
+
 function cleanUp()
 {
 	node = document.getElementsByTagName("body")[0];
@@ -17,6 +34,9 @@ function cleanUp()
 }
 cleanUp();
 
+var selectedText = getSelected();
+var qrData = (selectedText == false) ? document.location.href : selectedText;
+
 var shade = document.createElement("div");
 	shade.setAttribute('class','shaunsational_qr');
 	shade.setAttribute('id','shade');
@@ -30,13 +50,13 @@ var centr = document.createElement("div");
 var qrdiv = document.createElement("div");
 	qrdiv.setAttribute('class','shaunsational_qr');
 	qrdiv.setAttribute('id','qrdiv');
-	qrdiv.setAttribute('style','margin:25px auto auto auto;background-color:#FFF;height:320px;width:320px;z-index:1001;-moz-border-radius:20px;');
-	
+	qrdiv.setAttribute('style','margin:25px auto auto auto;background-color:#FFF;height:320px;width:320px;z-index:1001;-moz-border-radius:20px;');   
+   
 var qrcode = document.createElement("img");
 	qrcode.setAttribute('class','shaunsational_qr');
 	qrcode.setAttribute('id','qrcode');
 	qrcode.setAttribute('style','margin:10px;cursor:pointer;');
-	qrcode.setAttribute('src','http://chart.apis.google.com/chart?cht=qr&chs=300x300&chld=H|0&chl=' + document.location.href);
+	qrcode.setAttribute('src','http://chart.apis.google.com/chart?cht=qr&chs=300x300&chld=H|0&chl=' + qrData);
 	qrcode.setAttribute('title','Click to close.');
 	
 var qrurl = document.createElement("div");
