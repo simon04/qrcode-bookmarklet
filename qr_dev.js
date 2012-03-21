@@ -2,7 +2,8 @@ function customURL(url)
 {
 	if (url.indexOf('maps.google.com') != -1)
 	{
-		return document.getElementById('link').href;
+		$('leshorturl').click;
+		setTimeout('return $(\'link\').href', 500);
 	}
 	else
 	{
