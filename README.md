@@ -5,7 +5,7 @@ This bookmarklet is based on shaun's qrbookmarklet from https://code.google.com/
 
 To install, create a bookmark of
 ```
-javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://localhost:8000/qrcode.js';document.body.appendChild(document.createElement('script')).src='http://localhost:8000/qr.js';})();
+javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://simon04.github.io/qrcode-bookmarklet/qrcode.js';document.body.appendChild(document.createElement('script')).src='http://simon04.github.io/qrcode-bookmarklet/qr.js';})();
 ```
 
 This project is MIT licensed.
